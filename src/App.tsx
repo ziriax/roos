@@ -130,7 +130,7 @@ function App() {
 
   const isCorrectAnswer = React.useMemo(
     () => (correctAnswer: string, userAnswer: string) => correctAnswer.split(",").some(a => {
-      return a.toLowerCase() === userAnswer.toLowerCase();
+      return a.toLowerCase().trim() === userAnswer.toLowerCase().trim();
     }),
     []
   );
