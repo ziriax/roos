@@ -6,7 +6,7 @@ export const couleurs: Record<string, string> = {
   "vert, verte": "groen",
   "rouge": "rood",
   "bleu clair": "lichtblauw",
-  "bleu foncé  ": "donkerblauw",
+  "bleu foncé": "donkerblauw",
   "orange": "oranje",
   "mauve": "paars",
   "brun, brune": "bruin",

@@ -13,7 +13,7 @@ export const livre: Record<string, string> = {
   "la couverture": "de omslag, de cover",
   "la page": "de pagina",
   "le texte": "de tekst",
-  "le chapitre  ": "het hoofdstuk",
+  "le chapitre": "het hoofdstuk",
   "le lecteur, la lectrice": "de lezer, de lezeres",
   "la librairie": "de boekenwinkel",
   "la bibliothèque": "de bibliotheek",

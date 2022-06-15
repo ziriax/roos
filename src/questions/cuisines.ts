@@ -45,5 +45,5 @@ export const cuisines: Record<string, string> = {
   "fondre": "smelten",
   "sortir": "uithalen",
   "déguster": "proeven, eten",
-  "éplucher  ": "schillen",
+  "éplucher": "schillen",
 };

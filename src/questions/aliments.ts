@@ -22,7 +22,7 @@ export const aliments: Record<string, string> = {
 
 
   "la compote": "de vruchtenmoes",
-  "l'huile d'olive ": "de olijfolie",
+  "l'huile d'olive": "de olijfolie",
   "le sel": "het zout",
   "le poivre": "de peper",
   "le ketchup": "de ketchup",

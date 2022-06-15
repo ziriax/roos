@@ -29,7 +29,7 @@ interface Entry {
 
 // const tableByName = Object.entries(questions).reduce<Record<string, string>>((table, [s, n]) => { table[n] = s; return table }, {});
 
-const storagePrefix = "14_06_2022"
+const storagePrefix = "15_06_2022"
 
 function gameModeSerializer() {
   const storageKey = `${storagePrefix}_GAME_MODE`;
