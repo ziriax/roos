@@ -1,0 +1,33 @@
+body {
+  font-size: x-large;
+  margin: 2rem;
+}
+
+.App {
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  font-size: x-large;
+  width: 100%;
+}
+
+.retry {
+  color: orangered;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.active {
+  outline: 4px solid indianred;
+}

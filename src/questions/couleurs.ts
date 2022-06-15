@@ -1,0 +1,15 @@
+export const couleurs: Record<string, string> = {
+  "la couleur": "de kleur",
+  "blanc, blanche": "wit",
+  "noir, noire": "zwart",
+  "jaune": "geel",
+  "vert, verte": "groen",
+  "rouge": "rood",
+  "bleu clair": "lichtblauw",
+  "bleu foncé  ": "donkerblauw",
+  "orange": "oranje",
+  "mauve": "paars",
+  "brun, brune": "bruin",
+  "beige": "beige",
+  "gris, grise": "grijs",
+};

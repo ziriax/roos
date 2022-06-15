@@ -1,0 +1,15 @@
+export const boissons: Record<string, string> = {
+  "la boisson": "de drank",
+  "l'eau": "het water",
+  "l'eau plate": "het plat water",
+  "l'eau gazeuse": "het spuitwater",
+  "le café": "de koffie",
+  "le jus d'orange": "het sinaasappelsap",
+  "le coca": "de cola",
+  "le thé": "de thee",
+  "le lait": "de melk",
+  "la soupe, le potage": "de soep",
+  "le vin": "de wijn",
+  "le champagne": "de champagne",
+  "la bière": "het bier",
+}

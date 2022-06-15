@@ -1,0 +1,17 @@
+export const maison: Record<string, string> = {
+  "la porte d'entrée": "de voordeur",
+  "l'entrée": "de inkomhal",
+  "l'escalier": "de trap",
+  "le couloir": "de gang",
+  "le toit": "het dak",
+  "la cheminée": "de schoorsteen",
+  "la salle de bains": "de badkamer",
+  "les toilettes": "het toilet",
+  "la chambre à coucher": "de slaapkamer",
+  "la cuisine": "de keuken",
+  "le salon": "de woonkamer",
+  "le bureau": "de bureau",
+  "le garage": "de garage",
+  "le vestiaire": "de vestiaire",
+  "la terrasse": "het terras",
+};

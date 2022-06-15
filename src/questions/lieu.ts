@@ -1,0 +1,16 @@
+export const lieu: Record<string, string> = {
+  "entre": "tussen",
+  "dans": "in",
+  "sur": "op",
+  "sous": "onder",
+  "devant": "voor",
+  "derrière": "achter",
+  "à côté de": "naast",
+  "en face de": "tegenover",
+  "à gauche de": "links van",
+  "à droite de": "rechts van",
+  "près de": "dicht bij",
+  "loin de": "ver van",
+  "au milieu de": "in het midden van",
+  "au fond de": "achteraan",
+};

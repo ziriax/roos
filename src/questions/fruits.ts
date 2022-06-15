@@ -1,0 +1,16 @@
+export const fruits: Record<string, string> = {
+  "le fruit": "het stuk fruit",
+  "la fraise": "de aardbei",
+  "l'abricot": "de abrikoos",
+  "le raisin": "de druif",
+  "l'orange": "de sinaasappel",
+  "le citron": "de citroen",
+  "la pomme": "de appel",
+  "la poire": "de peer",
+  "la banane": "de banaan",
+  "la cerise": "de kers",
+  "la pastèque": "de watermeloen",
+  "l'avocat": "de avocado",
+  "la myrtille": "de bosbes",
+  "l'ananas": "de ananas",
+};
