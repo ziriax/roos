@@ -9,7 +9,7 @@ export const fruits: Record<string, string> = {
   "la poire": "de peer",
   "la banane": "de banaan",
   "la cerise": "de kers",
-  "la pastèque": "de watermeloen",
+  "la pastèque, le melon d'eau": "de watermeloen",
   "l'avocat": "de avocado",
   "la myrtille": "de bosbes",
   "l'ananas": "de ananas",
