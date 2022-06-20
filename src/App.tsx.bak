@@ -3,18 +3,12 @@ import './App.css';
 import logoImage from "./dance.png";
 import { questions } from "./questions";
 
-const nlTable = questions;
-const frTable = Object.entries(questions).reduce<Record<string, string>>((table, [s, n]) => { table[n] = s; return table }, {});
-
-
 const GameModes = {
-  fr: "fr" as const,
-  nl: "nl" as const,
+  defs: "defs" as const,
 };
 
-type FrMode = typeof GameModes.fr;
-type NlMode = typeof GameModes.nl;
-type GameMode = FrMode | NlMode;
+type DefsMode = typeof GameModes.defs;
+type GameMode = DefsMode;
 
 type GameStat = Record<GameMode, {
   [question: string]: {
@@ -33,12 +27,14 @@ interface Entry {
 
 
 
-const storagePrefix = "20_06_2022"
+// const tableByName = Object.entries(questions).reduce<Record<string, string>>((table, [s, n]) => { table[n] = s; return table }, {});
+
+const storagePrefix = "15_06_2022"
 
 function gameModeSerializer() {
   const storageKey = `${storagePrefix}_GAME_MODE`;
   const stored = localStorage.getItem(storageKey)
-  const initial: GameMode = stored as GameMode || GameModes.fr;
+  const initial: GameMode = stored as GameMode || GameModes.defs;
 
   const serialize = (mode: GameMode) => localStorage.setItem(storageKey, mode);
   return { initial, serialize };
@@ -51,8 +47,7 @@ function gameStatSerializer() {
   const initial: GameStat = stored
     ? JSON.parse(stored) as GameStat
     : {
-      [GameModes.fr]: {},
-      [GameModes.nl]: {},
+      [GameModes.defs]: {},
     };
 
   const serialize = (state: GameStat) => localStorage.setItem(storageKey, JSON.stringify(state));
@@ -90,7 +85,7 @@ function updateGameStats(gs: GameStat, mode: GameMode, question: string, correct
 function getRandomEntries(mode: GameMode) {
   const stats = gameStatState.initial[mode];
 
-  const table = mode === GameModes.nl ? nlTable : frTable;
+  const table = questions; // mode === GameModes.defs ? questions : tableByName;
 
   const buckets: Record<number, Entry[]> = [];
 
@@ -116,8 +111,7 @@ function getRandomEntries(mode: GameMode) {
 }
 
 const initialRandomEntries = {
-  [GameModes.fr]: getRandomEntries(GameModes.fr),
-  [GameModes.nl]: getRandomEntries(GameModes.nl),
+  [GameModes.defs]: getRandomEntries(GameModes.defs),
 }
 
 function App() {
@@ -141,19 +135,19 @@ function App() {
     []
   );
 
-  const onGuessNL = React.useCallback(() => {
-    setMode(GameModes.nl)
-    setCorrect(0);
-    setWrong(0);
-    setCurrentIndex(0);
-  }, []);
+  // const onGuessNames = React.useCallback(() => {
+  //   setMode(GameModes.names)
+  //   setCorrect(0);
+  //   setWrong(0);
+  //   setCurrentIndex(0);
+  // }, []);
 
-  const onGuessFR = React.useCallback(() => {
-    setMode(GameModes.fr)
-    setCorrect(0);
-    setWrong(0);
-    setCurrentIndex(0);
-  }, []);
+  // const onGuessSymbols = React.useCallback(() => {
+  //   setMode(GameModes.defs)
+  //   setCorrect(0);
+  //   setWrong(0);
+  //   setCurrentIndex(0);
+  // }, []);
 
 
   const [correct, setCorrect] = React.useState(0);
@@ -237,19 +231,16 @@ function App() {
     lastWrongRef.current = -1;
   }, [currentIndex]);
 
-  const autoCapitalize = "off";
+  const autoCapitalize = mode === GameModes.defs ? "on" : "off";
 
   return (
     <div className="App">
-      <img className="logo" src={logoImage} alt="ball" />
-      <div>
-        <button onClick={onGuessNL} className={mode === GameModes.nl ? "active" : ""}>NL</button>
+      {/* <div>
+        <button onClick={onGuessNames} className={mode === GameModes.names ? "active" : ""}>Namen raden</button>
         &nbsp;
-        &nbsp;
-        &nbsp;
-        <button onClick={onGuessFR} className={mode === GameModes.fr ? "active" : ""}>FR</button>
+        <button onClick={onGuessSymbols} className={mode === GameModes.defs ? "active" : ""}>Symbolen raden</button>
       </div>
-      <br />
+      <br /> */}
       <div>
         <span ref={correctRef}>
           <code>Juist:</code>
@@ -268,6 +259,9 @@ function App() {
       <br />
       <br />
       <em className={currentEntry?.wrong ? "retry" : ""}>{currentEntry?.question}</em>
+      <br />
+      <br />
+      <img src={logoImage} alt="ball" />
     </div>
   );
 }

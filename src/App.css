@@ -31,3 +31,11 @@ input {
 .active {
   outline: 4px solid indianred;
 }
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5em;
+  margin: 1em;
+}
